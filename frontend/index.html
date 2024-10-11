@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Web App</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/2cf21ec1bb.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+        <div class="first">
+            ThoughtFULL
+        </div>
+        <div class="second" style="margin-right: 0px; padding: 0px;">
+            <nav >
+                <ul>
+                    <li class="home"><a href="">Home</a></li>
+                    <li class="about"><a href="">About</a></li>
+                    <li class="contact"><a href="">Contact</a></li>
+                    <li class="profile" style="width: 180px; margin-right: 0px;"><span>Profile</span>
+                        <ul class="drop-down">
+                            <li class="dashboard" ><a href="">Dashboard</a></li>
+                            <li class="logout"><a href="">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="post-wrapper">
+            <div class="slider-title">Recent Posts</div>
+            <div class="post-slider">
+                <button>
+                <i class="fa-solid fa-chevron-left" id="left-slider"></i>
+                </button>
+                <ul>
+                    <li class="post">A</li>
+                    <li class="post">B</li>
+                    <li class="post">C</li>
+                    <li class="post">D</li>
+                    <li class="post">E</li>
+                </ul>
+                <button>
+                <i class="fa-solid fa-chevron-right" id="right-slider"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="create">
+            <button class="btn"><a href="">New Blog</a></button>
+        </div>
+    </main>
+
+    <!-- <footer>
+        Copyright
+    </footer> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</body>
+</html>
