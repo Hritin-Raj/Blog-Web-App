@@ -6,7 +6,9 @@
 }
 
 body {
-    background-color: #E9EFEC;
+    /* background-color: #E9EFEC; */
+    background-color: #DEE5D4;
+    
 }
 
 li {
@@ -115,6 +117,10 @@ li.contact a:hover {
 main {
     height: 85vh;
     color: black;
+    /* background-image: url("images/body-background.jpg");
+    background-size: cover;      /* Make the image cover the entire area */
+    /* background-position: center; Center the image */
+    /* background-repeat: no-repeat; Prevent the image from repeating */ */
 }
 
 .slider-title {
@@ -142,17 +148,62 @@ main {
 }
 
 .post-slider .post {
-    border: solid red;
-    width: 380px;
-    /* height: 100%; */
+    /* border: solid red; */
+    border-radius: 20px;
+    background-color: #FADFA1;
+    width: 390px;
+    padding: 0px;
     height: 390px;
-    margin: 0px 30px;
+    margin: 0px 15px;
     display: inline-block;
 }
 
+.post-image {
+    margin: 0px;
+    padding: 0px;
+    height: 63%;
+}
+
+.post-content {
+    margin: 0px;
+    padding: 10px;
+    height: 47%;
+    background-color: white;
+}
+
+.post-title {
+    height: 50%;
+    font-size: 30px;
+}
+
+.info {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+}
+
+.username{
+    margin-right: 25px;
+}
+
+#profile-pic {
+    width: 25px;
+}
+
+#calendar {
+    width: 25px;
+}
+
 i {
-    /* border: solid red; */
+    border: none;
     justify-content: space-around;
+}
+
+.slider-button {
+    border: none;
+    background-color: #DEE5D4;
+    cursor: pointer;
 }
 
 .fa-solid {
