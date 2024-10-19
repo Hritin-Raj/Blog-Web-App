@@ -180,19 +180,42 @@ main {
     height: 50%;
     display: flex;
     align-items: center;
-    font-size: 25px;
+    justify-content: space-between;
+    font-size: 10px;
 }
 
 .username{
-    margin-right: 25px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.username span {
+    margin-left: 5px;
+    width: 80%;
+    font-size: 25px;
+}
+
+.date {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.date span {
+    margin-left: 5px;
+    width: 80%;
+    font-size: 25px;
 }
 
 #profile-pic {
     width: 25px;
+    font-size: 25px;
 }
 
 #calendar {
     width: 25px;
+    font-size: 25px;
 }
 
 i {
@@ -229,12 +252,22 @@ i {
     width: 100px;
     border-radius: 20px;
     border: none;
+    cursor: pointer;
 }
 
 .create .btn a {
     font-size: 25px;
     color: rgb(143, 15, 39);
     text-decoration: none;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.post-title a:hover {
+    text-decoration: underline;
 }
 
 /* footer {

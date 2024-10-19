@@ -16,4 +16,29 @@ $(document).ready(function () {
     $('#right-slider').click(function () {
         $('.post-slider ul').slick('slickNext');
     });
+
+    // Fetch and display whenever page loads
+    fetchPostDetails()
 });
+
+
+async function fetchPostDetails() {
+    const response = await fetch('/api/posts')
+
+    if(!response.ok) {
+        console.log("Post Not Found")
+        throw new Error("Post Not Found")
+    }
+    
+    const posts = await response.json()
+
+    console.log(posts)
+
+    for(let i=1; i<=5 ;i++) {
+        let id = "#post-" + i.toString()
+        console.log(posts[i-1].createdAt.split('T')[0])
+        document.querySelector(id + " .post-title span").innerHTML = posts[i-1].title  
+        document.querySelector(id + " .username span").innerHTML = posts[i-1].authorId.username.split(' ')[0] 
+        document.querySelector(id + " .date span").innerHTML = posts[i-1].createdAt.substring(0, 10)
+    }
+}
