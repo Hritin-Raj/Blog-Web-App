@@ -8,7 +8,8 @@
 body {
     /* background-color: #E9EFEC; */
     background-color: #DEE5D4;
-    
+    height: 100%;
+    overflow: auto;
 }
 
 li {
@@ -269,6 +270,134 @@ i {
 .post-title a:hover {
     text-decoration: underline;
 }
+
+.recent {
+    padding: 30px;
+}
+
+.recent .title {
+    font-size: 50px;
+}
+
+.list a {
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.list li {
+    margin: 10px 0px;
+    padding: 0px 30px;
+}
+
+.blog-article {
+    padding: 20px;
+    display: flex;
+}
+
+.blog-info {
+    background-color: white;
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    height: 85vh;
+}
+
+.user-info {
+    background-color: white;
+    width: 20%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    height: 50vh;
+    position: relative;
+}
+
+.blog-title {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+}
+
+#title {
+    height: 50px;
+    background-color: rgb(222, 221, 221);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.blog-content {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+}
+
+#content {
+    height: 500px;
+    background-color: rgb(222, 221, 221);
+    border: none;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.username {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+}
+
+#username {
+    height: 50px;
+    background-color: rgb(222, 221, 221);
+    border: none;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+}
+
+#email {
+    height: 50px;
+    background-color: rgb(222, 221, 221);
+    border: none;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.submit {
+    position: absolute;
+    bottom: 30px; /* Positions the button at the bottom */
+    left: 50%;    /* Moves the button horizontally to the middle */
+    transform: translateX(-50%); /*Centers the button relative to its own width */
+    height: 70px;
+    width: 140px;
+}
+
+#submit {
+    background-color: #f7c758;
+    border: none;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
 
 /* footer {
     background-color: #2E073F;
