@@ -31,6 +31,16 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname + "/../frontend/index.html"))
 })
 
+app.get("/api/recent-posts", async (req, res) => {
+    try {
+        const recentPosts = await Post.find().sort({ createdAt: -1 }).limit(5);
+        res.json(recentPosts);
+    } catch (error) {
+        res.status(500).json({ message: "Error fetching recent posts" });
+    }
+});
+
+
 app.get("/api/posts/:id", async (req, res) => {
     const postId = req.params.id
     const post = await Post.find({ postId: postId })
