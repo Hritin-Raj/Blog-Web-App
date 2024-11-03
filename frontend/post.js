@@ -12,8 +12,8 @@ async function fetchPost() {
     const post = await response.json()
 
     // Display post
-    document.getElementById("post-title").innerText = post[0].title
-    document.getElementById("post-content").innerText = post[0].content
+    document.getElementById("post-title-layout").innerText = post[0].title
+    document.getElementById("post-content-layout").innerText = post[0].content
 }
 
 // Fetch and display whenever page loads

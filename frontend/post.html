@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post</title>
+
+  <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <h1 id="post-title"></h1>
-  <p id="post-content"></p>
+  <header>
+    <div class="first">
+      ThoughtFULL
+    </div>
+    <div class="second" style="margin-right: 0px; padding: 0px;">
+      <nav >
+        <ul>
+          <li class="home"><a href="">Home</a></li>
+          <li class="about"><a href="">About</a></li>
+          <li class="contact"><a href="">Contact</a></li>
+          <li class="profile" style="width: 180px; margin-right: 0px;"><span>Profile</span>
+            <ul class="drop-down">
+              <li class="dashboard" ><a href="">Dashboard</a></li>
+              <li class="logout"><a href="">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <main id="layout">
+    <h1 id="post-title-layout"></h1>
+    <p id="post-content-layout"></p>
+  </main>
 
   <script src="post.js"></script>
 </body>

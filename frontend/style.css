@@ -121,7 +121,7 @@ main {
     /* background-image: url("images/body-background.jpg");
     background-size: cover;      /* Make the image cover the entire area */
     /* background-position: center; Center the image */
-    /* background-repeat: no-repeat; Prevent the image from repeating */ */
+    /* background-repeat: no-repeat; Prevent the image from repeating */
 }
 
 .slider-title {
@@ -400,6 +400,19 @@ i {
     cursor: pointer;
 }
 
+/* post.html */
+#layout {
+    margin: 15px;
+}
+
+#post-title-layout {
+    font-size: 50px;
+}
+
+#post-content-layout {
+    margin: 10px 0;
+    font-size: 20px;
+}
 
 
 /* footer {
