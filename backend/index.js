@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 const User = require("./models/user")
 const Post = require("./models/post")
 const path = require("path")
+const cors = require("cors");
 
 const app = express()
 const PORT = 3000
@@ -17,6 +18,8 @@ mongoose
 
 // Middleware
 app.use(express.static(path.join(__dirname + "/../frontend")))
+app.use(cors());
+app.use(express.json()); // Parse incoming JSON requests
 
 
 app.listen(PORT, console.log(`Server started at port ${PORT}`))
@@ -44,4 +47,38 @@ app.get("/api/posts", async (req, res) => {
     const posts = await Post.find().populate('authorId', 'username')
 
     res.json(posts)
+})
+
+app.post("/api/create", async (req, res) => {
+    const {title, content, username, email} = req.body
+
+    const existingUser = await User.findOne({ email: email })
+    if (existingUser) {
+        //return res.json({ success: false, message: "Email already exists." });
+
+        // Create corresponding post
+        const newPost = new Post({
+        title: title,
+        content: content,
+        authorId: existingUser._id,
+        });
+
+        await newPost.save();
+        return res.json({ success: true, message: "New post created successfully for existing user." });
+    }
+    else {
+        // Create new user document
+        const newUser = new User({ username: username, email: email });
+        await newUser.save();
+
+        // Create corresponding post
+        const newPost = new Post({
+        title: title,
+        content: content,
+        authorId: newUser._id,
+        });
+        
+        await newPost.save();
+        return res.json({ success: true, message: "User and post created successfully." });
+    }
 })

@@ -12,7 +12,6 @@ const userSchema = mongoose.Schema({
     },
     password: {
         type: String,
-        required: true
     },
     createdAt: {
         type: Date,
@@ -20,7 +19,18 @@ const userSchema = mongoose.Schema({
     }
 })
 
-// Model
-const User = mongoose.model("users", userSchema)
+// Pre-save Middleware -> This Middleware gets activated whenever the 'save' operation is performed
+userSchema.pre("save", async function (next) { // Use regular function here
+    const user = this;
 
-module.exports = User
+    if (!user.password) {
+        const defaultPassword = "1234";
+        user.password = defaultPassword;
+    }
+    next();
+});
+
+// Model
+const User = mongoose.model("users", userSchema);
+
+module.exports = User;
