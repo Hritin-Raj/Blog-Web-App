@@ -4,6 +4,7 @@ const User = require("./models/user")
 const Post = require("./models/post")
 const path = require("path")
 const cors = require("cors");
+const { title } = require("process")
 
 const app = express()
 const PORT = 3000
@@ -53,7 +54,7 @@ app.get("/api/posts/:id", async (req, res) => {
     res.status(200).send(post)
 })
 
-app.get("/api/posts", async (req, res) => {
+app.get("/api/details", async (req, res) => {
     const posts = await Post.find().populate('authorId', 'username')
 
     res.json(posts)
@@ -92,3 +93,40 @@ app.post("/api/create", async (req, res) => {
         return res.json({ success: true, message: "User and post created successfully." });
     }
 })
+
+
+app.get("/api/posts/title/:title", async (req, res) => {
+    const title = req.params.title
+
+    const post = await Post.findOne({ title: title })
+    return res.status(200).send(post)    
+})
+
+app.get("/api/posts/author/:email", async (req, res) => {
+    const email = req.params.email;
+
+    const user = await User.findOne({ email: email });
+    if (!user) {
+        console.log("Author not found");
+        return res.status(404).json({ message: "Author Not Found" });
+    }
+
+    const posts = await Post.find({ authorId: user._id });
+    console.log(posts);
+    return res.status(200).send(posts);
+});
+
+/** Error Reason:
+ The issue here is that await User.findOne({ email: email })._id is attempting to access the _id property directly on the result of findOne, but if no user is found, findOne will return null, causing undefined when accessing _id. This is why you’re seeing undefined for the id and an empty array for posts.
+ */
+// app.get("/api/posts/author/:email", async (req, res) => {
+//     const email = req.params.email
+
+//     const id = await User.findOne({ email: email })._id
+//     console.log(id)
+//     const posts = await Post.find({ authorId: id})
+//     console.log(posts)
+//     return res.status(200).send(posts)    
+// })
+
+
